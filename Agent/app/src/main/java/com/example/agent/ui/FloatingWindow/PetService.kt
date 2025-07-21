@@ -18,6 +18,7 @@ import android.view.WindowManager
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import com.airbnb.lottie.LottieAnimationView
+import com.airbnb.lottie.LottieDrawable
 import com.example.agent.R
 import com.example.agent.ui.OcrService.OcrService
 
@@ -75,11 +76,11 @@ class PetService : Service() {
             .inflate(R.layout.floating_pet_layout, null, false)
         animView = petView.findViewById(R.id.pet_anim)
 
-//        animView.apply {
-//            setAnimation("pets/cat/idle.json")      // 仅播 idle
-//            repeatCount = LottieDrawable.INFINITE
-//            playAnimation()
-//        }
+        animView.apply {
+            setAnimation("pets/cat/idle.json")      // 仅播 idle
+            repeatCount = LottieDrawable.INFINITE
+            playAnimation()
+        }
 
         wm.addView(petView, lp)
         initTouchDrag()
